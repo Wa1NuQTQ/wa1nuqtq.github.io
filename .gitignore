@@ -1,0 +1,26 @@
+# Build output and local caches
+dist/
+.output/
+.astro/
+node_modules/
+.pnpm-store/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

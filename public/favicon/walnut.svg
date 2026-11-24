@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <title>Walnut</title>
+  <path d="M32 8C26 5 19 9 16 15C9 18 7 26 10 32C6 40 10 49 17 53C21 59 28 61 32 58C38 61 45 57 48 52C56 48 58 40 54 33C57 25 53 17 47 14C43 7 37 5 32 8Z" fill="#bc824b" stroke="#5b3825" stroke-width="3.5" stroke-linejoin="round"/>
+  <path d="M30 10C24 9 20 13 18 18C12 21 11 27 14 33C10 39 14 47 20 50C23 55 27 57 31 55C34 47 26 40 31 32C36 24 27 18 30 10Z" fill="#e0ad70"/>
+  <g fill="none" stroke="#70442b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 9C27 18 37 24 31 32C26 40 37 48 32 57"/>
+    <path d="M23 17C18 21 24 25 20 30C16 34 18 39 22 41"/>
+    <path d="M17 44C23 43 26 47 24 52"/>
+    <path d="M41 16C46 21 40 25 44 30C49 34 48 40 43 42"/>
+    <path d="M48 45C42 44 39 48 41 52"/>
+  </g>
+</svg>

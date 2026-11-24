@@ -7,6 +7,8 @@ tags: [眼动估计]
 
 手挡住一只眼睛后，检测器仍可能在手上画出眼部关键点。EyeGaze 用虹膜热图判断哪只眼有足够的信号，再对通过筛选的眼睛估计相对于头部的注视方向。
 
+[EyeGaze 源码仓库](https://github.com/Wa1NuQTQ/EyeGaze)
+
 ## 单眼遮挡结果
 
 我们在 NASA 宇航员 Eileen Collins 的公开肖像上合成了一只手，遮住她的右眼。全文的左右按人物自身区分。[NASA 原始肖像](https://www.nasa.gov/image-detail/amf-s99-00858/)

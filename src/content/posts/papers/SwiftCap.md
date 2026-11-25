@@ -1,6 +1,6 @@
 ---
 title: "SwiftCap: Fast Facial Appearance Capture from Multiview Images"
-published: 2026-11-19
+published: 2026-11-23
 description: "Reconstructing relightable 4K facial assets from eight casual photographs."
 tags: [论文]
 ---

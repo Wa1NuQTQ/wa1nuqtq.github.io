@@ -28,6 +28,24 @@ function createFigure(imgNode, isInGallery = false) {
 
 export function rehypeImageProcessor() {
   return (tree) => {
+    const diagramImages = new Set()
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'pre' && node.properties?.className?.includes('mermaid')) {
+        const source = node.children.map(child => child.value ?? '').join('')
+        for (const [, path] of source.matchAll(/\bimg:\s*["'](\.\.?\/[^"'\r\n]+)["']/g)) {
+          diagramImages.add(path)
+        }
+      }
+    })
+    // Keep the Markdown path so Mermaid can reuse Astro's resolved image URL.
+    if (diagramImages.size > 0) {
+      visit(tree, 'element', (node) => {
+        if (node.tagName === 'img' && diagramImages.has(node.properties?.src)) {
+          node.properties['data-mermaid-image'] = node.properties.src
+        }
+      })
+    }
+
     visit(tree, 'element', (node, index, parent) => {
       // Skip non-paragraph elements, empty paragraphs, and orphaned nodes
       if (node.tagName !== 'p' || !node.children || node.children.length === 0 || !parent) {

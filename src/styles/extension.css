@@ -1,3 +1,33 @@
+/* Project resource links */
+.project-resource-links {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-block: 1rem;
+}
+
+.project-resource-links a {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 52px;
+  border-radius: 9px;
+}
+
+.project-resource-links a:hover,
+.project-resource-links a:focus-visible {
+  background: color-mix(in srgb, currentColor 7%, transparent);
+}
+
+.project-resource-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+html.dark .project-github-mark {
+  filter: invert(1);
+}
+
 /* GitHub Card */
 .gc-container {
   --at-apply: 'my-6 block overflow-x-auto uno-round-border bg-secondary/5 px-5 py-4 transition-colors ease-out hover:(bg-secondary/10 c-primary) lg:(px-6 py-5)';

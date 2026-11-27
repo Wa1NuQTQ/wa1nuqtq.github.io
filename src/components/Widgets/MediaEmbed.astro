@@ -10,11 +10,22 @@ async function setupMermaidEmbeds() {
     return
   }
 
-  // Store original code for re-rendering
+  // Resolve local diagram images to the same URLs as the article figures.
+  const images = new Map(
+    Array.from(document.querySelectorAll<HTMLImageElement>('img[data-mermaid-image]'), image => [
+      image.dataset.mermaidImage,
+      image.src,
+    ]),
+  )
   mermaids.forEach((element) => {
     const mermaid = element as HTMLElement
     if (!mermaid.dataset.mermaidCode) {
-      mermaid.dataset.mermaidCode = mermaid.textContent?.trim() ?? ''
+      const code = mermaid.textContent?.trim() ?? ''
+      mermaid.dataset.mermaidCode = code.replace(/\bimg:\s*["'](\.\.?\/[^"'\r\n]+)["']/g, (match, path) => {
+        const image = images.get(path)
+        return image ? `img: "${image}"` : match
+      })
+      mermaid.textContent = mermaid.dataset.mermaidCode
     }
   })
 
@@ -93,7 +104,7 @@ function updateMermaidTheme() {
     // Reset content and re-run Mermaid
     mermaids.forEach((element) => {
       const mermaid = element as HTMLElement
-      mermaid.innerHTML = mermaid.dataset.mermaidCode ?? ''
+      mermaid.textContent = mermaid.dataset.mermaidCode ?? ''
       mermaid.removeAttribute('data-processed')
     })
 

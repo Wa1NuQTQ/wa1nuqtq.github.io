@@ -1,6 +1,6 @@
 ---
 title: "PlayItByFace"
-published: 2026-11-19
+published: 2026-11-27
 description: "用表情操作的多人派对游戏。"
 tags: [派对游戏]
 ---
